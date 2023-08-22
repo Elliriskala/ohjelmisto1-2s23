@@ -9,8 +9,8 @@ leiviskä = 20 * naula
 # print(f"{32 * luoti}")
 # print(f"{20 * naula}")
 
-num1 = int(input("Anna leiviskät: "))
-num2 = int(input("Anna naulat: "))
+num1 = float(input("Anna leiviskät: "))
+num2 = float(input("Anna naulat: "))
 num3 = float(input("Anna luodit: "))
 
 result = num1 * leiviskä + num2 * naula + num3 * luoti
