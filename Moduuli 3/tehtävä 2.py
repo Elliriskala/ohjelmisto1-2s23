@@ -1,4 +1,4 @@
-hytti = input("Ilmoita laivan hyttiluokka: LUX, A, B, C. ")
+hytti = input("Ilmoita laivan hyttiluokka: LUX, A, B, C. ").upper()
 if hytti == "LUX":
     print("LUX on parvekkeellinen hytti yläkannella.")
 elif hytti == "A":
