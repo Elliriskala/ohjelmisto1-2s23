@@ -55,6 +55,8 @@ for i in range(7):  # 0, 1, 2, 3, 4, 5, 6
 for i in range(len(names)):  # 0, 1, 2, 3, -> name-listan pituus -1
     print(f"Nimi: {names[i]}, ikä: {ages[i]}")
 
+"""
 # range esim.
 for i in range(999, 0, -3):
     print(i)
+"""
