@@ -7,13 +7,14 @@ nimet = set()
 
 while True:
     nimi = input("Syötä nimi: ")
+    nimi = nimi.casefold().capitalize()
     if nimi == '':
         break
     elif nimi not in nimet:
         print("Uusi nimi.")
+        nimet.add(nimi)
     elif nimi in nimet:
         print("Aiemmin syötetty nimi.")
-    nimet.add(nimi)
 
 print("Painoit 'enter' ja ohjelma lopetti toimintansa")
 print("Tulostetaan syötetyt nimet mielivaltaisessa järjestyksessä: ")
