@@ -3,12 +3,9 @@
 # syötettiinkö nimi ensimmäistä kertaa. Lopuksi ohjelma luettelee syötetyt nimet yksi kerrallaan allekkain
 # mielivaltaisessa järjestyksessä. Käytä joukkotietorakennetta nimien tallentamiseen.
 
-nimi = input("Syötä nimi: ")
-nimet = {nimi}
-print("Uusi nimi.")
-nimet.add(nimi)
+nimet = set()
 
-while nimi != '':
+while True:
     nimi = input("Syötä nimi: ")
     if nimi == '':
         break
@@ -20,6 +17,7 @@ while nimi != '':
 
 print("Painoit 'enter' ja ohjelma lopetti toimintansa")
 print("Tulostetaan syötetyt nimet mielivaltaisessa järjestyksessä: ")
+
 for i in nimet:
     print(i)
 
