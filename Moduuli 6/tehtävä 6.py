@@ -4,7 +4,7 @@
 # (eli kummalla on alhaisempi yksikköhinta). Yksikköhintojen laskennassa on hyödynnettävä kirjoitettua funktiota.
 import math
 def pyöreä_pitsa(halkaisija, hinta):
-    return hinta/((math.pi * (halkaisija/2)**2)/1000)
+    return hinta/((math.pi * (halkaisija/2)**2))
 
 halkaisija = float(input("Mikä on ensimmäisen pitsan halkaisija senttimetreinä? "))
 hinta = float(input("Montako euroa ensimmäinen pitsa maksaa? "))
