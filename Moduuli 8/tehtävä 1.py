@@ -3,13 +3,6 @@
 # lentokenttätietokannasta. ICAO-koodi on tallennettuna airport-taulun ident-sarakkeeseen.
 
 import mysql.connector
-def get_airports_by_ICAO(ICAO):
-    sql = f"select municipality, airport.name, ident from airport where ident = '{ICAO}'"
-    cursor = connection.cursor()
-    cursor.execute(sql)
-    result = cursor.fetchone()
-    if result:
-        return result
 
 connection = mysql.connector.connect(
     host='127.0.0.1',
@@ -19,11 +12,21 @@ connection = mysql.connector.connect(
     password='koira12',
     autocommit=True
     )
+def get_airports_by_ICAO(ICAO):
+    sql = f"select municipality, airport.name, ident from airport where ident = '{ICAO}'"
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    result = cursor.fetchone()
+    if result:
+        return result
+    else:
+        print("Syöttämääsi ICAO-koodia ei löytynyt.")
+        return
 
 ICAO = get_airports_by_ICAO(input("Mikä on etsimäsi lentokentän ICAO-koodi: ").upper())
-print("Tulostetaan syöttämääsi ICAO-koodia vastaava lentokenttä ja sijaintikunta: ")
-ICAO = (f"lentokenttä: {ICAO[1]}, sijaintikunta: {ICAO[0]}")
-print(ICAO)
+print("Tulostetaan syöttämääsi ICAO-koodia vastaava lentokenttä ja sijaintikunta. "
+      f"Lentokenttä: {ICAO[1]}, sijaintikunta: {ICAO[0]}")
+
 
 
 
