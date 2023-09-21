@@ -13,19 +13,19 @@ connection = mysql.connector.connect(
     autocommit=True
     )
 def get_airports_by_ICAO(ICAO):
-    sql = f"select municipality, airport.name, ident from airport where ident = '{ICAO}'"
     cursor = connection.cursor()
+    sql = f"select municipality, name from airport where ident = '{ICAO}'"
     cursor.execute(sql)
     result = cursor.fetchone()
     if result:
         return result
     else:
-        print("Syöttämääsi ICAO-koodia ei löytynyt.")
-        return
+        return "Syöttämääsi ICAO-koodia ei löytynyt."
 
-ICAO = get_airports_by_ICAO(input("Mikä on etsimäsi lentokentän ICAO-koodi: ").upper())
-print("Tulostetaan syöttämääsi ICAO-koodia vastaava lentokenttä ja sijaintikunta. "
-      f"Lentokenttä: {ICAO[1]}, sijaintikunta: {ICAO[0]}")
+
+airport = get_airports_by_ICAO(input("Mikä on etsimäsi lentokentän ICAO-koodi: "))
+print(f"Tulostetaan syöttämääsi ICAO-koodia vastaava lentokenttä ja sijaintikunta. "
+      f"Lentokenttä: {airport[1]}, sijaintikunta: {airport[0]}")
 
 
 
