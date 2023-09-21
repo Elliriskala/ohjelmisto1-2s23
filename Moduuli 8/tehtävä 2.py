@@ -10,7 +10,8 @@ connection = mysql.connector.connect(
     user='Elli',
     password='koira12',
     autocommit=True
-    )
+)
+
 
 def get_airport_type_by_iso_country(iso_country, airport_type):
     sql = f"select type from airport where airport.iso_country = '{iso_country}'"
@@ -23,7 +24,7 @@ def get_airport_type_by_iso_country(iso_country, airport_type):
     for row in result:
         if row[0] in airport_type:
             airport_type[row[0]] += 1
-    print(f"Syöttämälläsi maakoodilla: '{iso_country}' saadut lentokentät: '{airport_type}'")
+    print(f"Syöttämälläsi maakoodilla: {iso_country} saadut lentokentät: {airport_type}")
     return
 
 
@@ -32,12 +33,7 @@ airport_type = {'heliport': 0,
                 'medium_airport': 0,
                 'large_airport': 0,
                 'closed': 0
-}
+                }
 
 iso_country = input("Ohjelma tulostaa maakoodilla kyseisen maan lentokentät. Syötä haluamasi maakoodi: ").upper()
 get_airport_type_by_iso_country(iso_country, airport_type)
-
-
-
-
-
