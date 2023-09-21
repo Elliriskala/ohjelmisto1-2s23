@@ -23,9 +23,9 @@ def get_airports_by_ICAO(ICAO):
 
 
 airport = get_airports_by_ICAO(input("Mikä on etsimäsi lentokentän ICAO-koodi: "))
+
 if airport is None:
     print("Syöttämääsi ICAO-koodia ei löytynyt.")
-
 else:
     print(f"Tulostetaan syöttämääsi ICAO-koodia vastaava lentokenttä ja sijaintikunta. "
           f"Lentokenttä: {airport[1]}, sijaintikunta: {airport[0]}")
