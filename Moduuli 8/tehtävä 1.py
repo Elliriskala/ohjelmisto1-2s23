@@ -10,8 +10,6 @@ def get_airports_by_ICAO(ICAO):
     result = cursor.fetchone()
     if result:
         return result
-    else:
-        "No results."
 
 connection = mysql.connector.connect(
     host='127.0.0.1',
@@ -24,7 +22,8 @@ connection = mysql.connector.connect(
 
 ICAO = get_airports_by_ICAO(input("Mikä on etsimäsi lentokentän ICAO-koodi: ").upper())
 print("Tulostetaan syöttämääsi ICAO-koodia vastaava lentokenttä ja sijaintikunta: ")
-print(f"lentokenttä: {ICAO[1]}, sijaintikunta: {ICAO[0]}")
+ICAO = (f"lentokenttä: {ICAO[1]}, sijaintikunta: {ICAO[0]}")
+print(ICAO)
 
 
 
